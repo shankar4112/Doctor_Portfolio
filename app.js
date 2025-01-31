@@ -134,6 +134,7 @@ hamburger.addEventListener('click', function() {
     navMenu.classList.toggle('active');
     body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
 });
+<<<<<<< HEAD
 
 // Character counter for textarea
 document.querySelector('textarea').addEventListener('input', function() {
@@ -163,3 +164,5 @@ function submitForm(e) {
         alert('There was an error sending your message. Please try again.');
     });
 }
+=======
+>>>>>>> 3cc9382 (Initial commit)
