@@ -134,3 +134,32 @@ hamburger.addEventListener('click', function() {
     navMenu.classList.toggle('active');
     body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
 });
+
+// Character counter for textarea
+document.querySelector('textarea').addEventListener('input', function() {
+    const count = this.value.length;
+    document.querySelector('.char-count').textContent = `${count} / 180`;
+});
+
+// Form submission handler
+function submitForm(e) {
+    e.preventDefault();
+    
+    const form = document.getElementById('contactForm');
+    const formData = new FormData(form);
+    
+    fetch('https://docs.google.com/forms/d/e/1FAIpQLSeEDpA-Pu1fUupN4md81unKwpEqGlyhzC2uS7YmQAUntJbUFQ/formResponse', {
+        method: 'POST',
+        mode: 'no-cors', // This is important
+        body: formData
+    })
+    .then(() => {
+        alert('Thank you! Your message has been sent.');
+        form.reset();
+        document.querySelector('.char-count').textContent = '0 / 180';
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('There was an error sending your message. Please try again.');
+    });
+}

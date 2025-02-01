@@ -160,23 +160,24 @@
     
             <div class="contact-form">
                 <h2>Get in Touch</h2>
-                <form action="https://docs.google.com/forms/d/e/1FAIpQLSeEDpA-Pu1fUupN4md81unKwpEqGlyhzC2uS7YmQAUntJbUFQ/formResponse" method="POST" target="_blank">
-                  <div class="form-group">
-                    <input type="text" name="entry.1047740045" placeholder="First Name *" required>
-                  </div>
-                  <div class="form-group">
-                    <input type="email" name="entry.1616887220" placeholder="Email Address *" required>
-                  </div>
-                  <div class="form-group">
-                    <input type="tel" name="entry.513082175" placeholder="Phone Number">
-                  </div>
-                  <div class="form-group">
-                    <textarea name="entry.1841125543" placeholder="Message"></textarea>
-                    <div class="char-count">0 / 180</div>
-                  </div>
-                  <button type="submit" class="send-button">Send Message</button>
+                <form id="contactForm" onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <input type="text" name="entry.1047740045" placeholder="First Name *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="entry.1616887220" placeholder="Email Address *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" name="entry.513082175" placeholder="Phone Number">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="entry.1841125543" placeholder="Message" maxlength="180"></textarea>
+                        <div class="char-count">0 / 180</div>
+                    </div>
+                    <button type="submit" class="send-button">Send Message</button>
                 </form>
-              </div>
+            </div>
+        
               
         </div>
     </section>
