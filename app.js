@@ -141,6 +141,7 @@ document.querySelector('textarea').addEventListener('input', function() {
     const count = this.value.length;
     document.querySelector('.char-count').textContent = `${count} / 180`;
 });
+
 // Form submission handler
 function submitForm(e) {
     e.preventDefault();
@@ -150,7 +151,7 @@ function submitForm(e) {
     
     fetch('https://docs.google.com/forms/d/e/1FAIpQLSeEDpA-Pu1fUupN4md81unKwpEqGlyhzC2uS7YmQAUntJbUFQ/formResponse', {
         method: 'POST',
-        mode: 'no-cors', // Google Forms requires no-cors mode
+        mode: 'no-cors', // This is important
         body: formData
     })
     .then(() => {
@@ -163,18 +164,3 @@ function submitForm(e) {
         alert('There was an error sending your message. Please try again.');
     });
 }
-
-// Character counter for the message field
-const messageInput = document.querySelector("textarea[name='entry.1841125543']");
-const charCount = document.querySelector(".char-count");
-
-messageInput.addEventListener("input", () => {
-    const currentLength = messageInput.value.length;
-    charCount.textContent = `${currentLength} / 180`;
-});
-
-// Phone number input restriction to digits only
-const phoneInput = document.querySelector("input[name='entry.513082175']");
-phoneInput.addEventListener("input", () => {
-    phoneInput.value = phoneInput.value.replace(/[^0-9]/g, "");
-});
